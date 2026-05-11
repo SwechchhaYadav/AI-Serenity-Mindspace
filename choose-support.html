@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Select the type of mental health support that works best for you — AI chat, specialist text, or video therapy.">
+    <meta name="keywords" content="mental health, therapy, counselling, anxiety, depression, wellness, mindfulness, online therapy">
+    <meta name="author" content="Serenity Mindspace">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Choose Your Support – Serenity Mindspace">
+    <meta property="og:description" content="Select the type of mental health support that works best for you — AI chat, specialist text, or video therapy.">
+    <meta property="og:site_name" content="Serenity Mindspace">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Choose Your Support – Serenity Mindspace">
+    <meta name="twitter:description" content="Select the type of mental health support that works best for you — AI chat, specialist text, or video therapy.">
+    <!-- PWA -->
+    <meta name="theme-color" content="#7A9B76">
+    <link rel="manifest" href="manifest.json">
+    <title>Choose Your Support – Serenity Mindspace</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .choose-container {
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: var(--space-4xl);
+            background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(164, 196, 160, 0.05) 100%);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .page-title {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-2xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+    </style>
+    <script src="js/utils.js" defer></script>
+    <style>body { padding-top: 80px; } @media(max-width:768px){body{padding-top:70px;}}</style>
+</head>
+<body>
+    <!-- Shared Header -->
+    <header class="site-header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 C30 10 20 25 20 40 C20 55 30 65 40 75 C45 80 47 85 50 90 C53 85 55 80 60 75 C70 65 80 55 80 40 C80 25 70 10 50 10 Z M50 50 C40 50 35 45 35 40 C35 35 40 30 50 30 C60 30 65 35 65 40 C65 45 60 50 50 50 Z"/>
+                </svg>
+                <span>Serenity Mindspace</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="specialists.html" class="nav-link">Specialists</a></li>
+                <li><a href="store.html" class="nav-link">Pricing</a></li>
+                <li><a href="ai-chat.html" class="nav-link">AI Chat</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="dark-mode-toggle" data-action="toggle-dark" title="Toggle dark mode"><span data-dark-icon>🌙</span></button>
+                <a href="login.html" class="btn btn-outline" id="navLoginBtn">Login</a>
+                <a href="login.html?signup=true" class="btn btn-primary" id="navSignupBtn">Sign Up</a>
+                <a href="dashboard.html" class="btn btn-outline" id="navDashBtn" style="display:none">Dashboard</a>
+                <button class="btn btn-ghost" data-action="logout" id="navLogoutBtn" style="display:none">Logout</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="choose-container">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Choose Your Support Type</h1>
+            <p class="text-secondary" style="font-size:var(--text-sm);margin-top:var(--space-sm);">Current time: <span data-live-time="datetime"></span></p>
+                <p class="page-subtitle">
+                    Select the type of support that feels right for you. You can switch between options anytime.
+                </p>
+            </div>
+
+            <div class="support-grid">
+                <!-- AI Assistant Card -->
+                <div class="support-card">
+                    <div class="support-icon">🤖</div>
+                    <h3 class="support-title">AI Assistant</h3>
+                    <div class="support-subtitle">Available 24/7 • Instant</div>
+                    
+                    <p class="support-description">
+                        Smart AI that understands your needs and provides compassionate support and coping strategies. Perfect for immediate help or when you need someone to talk to.
+                    </p>
+                    
+                    <div class="support-meta">
+                        <div class="support-price">
+                            💎 5 tokens/message
+                        </div>
+                        <div class="support-rating" style="color: var(--color-accent);">
+                            ⭐ First 10 messages FREE
+                        </div>
+                    </div>
+                    
+                    <a href="ai-chat.html" class="btn btn-primary btn-full btn-lg">
+                        Start Chatting →
+                    </a>
+                </div>
+
+                <!-- Chat Specialist Card -->
+                <div class="support-card">
+                    <div class="support-icon">💬</div>
+                    <h3 class="support-title">Chat with Specialist</h3>
+                    <div class="support-subtitle">Licensed Professionals</div>
+                    
+                    <p class="support-description">
+                        Connect with verified therapists through secure text messaging. Get professional support through thoughtful, written conversation at your own pace.
+                    </p>
+                    
+                    <div class="support-meta">
+                        <div class="support-price">
+                            💎 50 tokens per 30 min
+                        </div>
+                        <div class="support-rating">
+                            ⭐ 4.8 avg rating
+                        </div>
+                    </div>
+                    
+                    <a href="specialists.html?type=chat" class="btn btn-secondary btn-full btn-lg">
+                        Browse Specialists →
+                    </a>
+                </div>
+
+                <!-- Video Call Card -->
+                <div class="support-card">
+                    <div class="support-icon">📹</div>
+                    <h3 class="support-title">Video Call Specialist</h3>
+                    <div class="support-subtitle">Face-to-Face Sessions</div>
+                    
+                    <p class="support-description">
+                        Book video appointments with licensed specialists for deeper therapeutic work. Experience the benefits of face-to-face therapy from anywhere.
+                    </p>
+                    
+                    <div class="support-meta">
+                        <div class="support-price">
+                            💎 100 tokens per 30 min
+                        </div>
+                        <div class="support-rating">
+                            📅 Book Now or Schedule
+                        </div>
+                    </div>
+                    
+                    <a href="specialists.html?type=video" class="btn btn-primary btn-full btn-lg">
+                        View Available Slots →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="grid grid-2" style="gap: var(--space-xl); margin-top: var(--space-4xl); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="card card-flat">
+                    <h4 style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm);">
+                        <span style="font-size: 1.5rem;">💡</span>
+                        Not Sure Which to Choose?
+                    </h4>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+                        Start with our AI assistant for immediate support. You can always upgrade to a specialist later if needed.
+                    </p>
+                    <a href="ai-chat.html" class="btn btn-outline">Try AI Assistant</a>
+                </div>
+
+                <div class="card card-flat">
+                    <h4 style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm);">
+                        <span style="font-size: 1.5rem;">🎁</span>
+                        Need More Tokens?
+                    </h4>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+                        You currently have <strong id="currentTokens">100</strong> tokens. Purchase more anytime to continue your sessions.
+                    </p>
+                    <a href="store.html" class="btn btn-outline">Buy Tokens</a>
+                </div>
+            </div>
+
+            <!-- Assessment Summary -->
+            <div class="card" style="max-width: 700px; margin: var(--space-4xl) auto 0; background: linear-gradient(135deg, rgba(122, 155, 118, 0.05) 0%, rgba(212, 146, 124, 0.05) 100%);">
+                <h4 style="margin-bottom: var(--space-md);">📊 Based on Your Assessment</h4>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);" id="assessmentSummary">
+                    We've reviewed your wellness assessment and recommend starting with professional support for the best results.
+                </p>
+                <div class="badge badge-primary">All your data is encrypted and confidential</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display current tokens
+        // getTokens() provided by utils.js
+        document.getElementById('currentTokens').textContent = getTokens();
+
+        // Show personalized message based on assessment
+        const assessmentData = JSON.parse(localStorage.getItem('assessmentData') || '{}');
+        const summaryEl = document.getElementById('assessmentSummary');
+
+        if (assessmentData.impact === 'severe' || assessmentData.selfHarm === 'recently') {
+            summaryEl.innerHTML = `
+                <strong>We strongly recommend speaking with a licensed specialist.</strong><br>
+                Based on your assessment, professional support would be most beneficial for your situation.
+            `;
+        } else if (assessmentData.impact === 'significant') {
+            summaryEl.innerHTML = `
+                We recommend starting with a specialist for personalized guidance. However, our AI assistant is also available 24/7 for immediate support.
+            `;
+        } else {
+            summaryEl.innerHTML = `
+                Our AI assistant can provide immediate support, or you can connect with a specialist for more structured therapy. Both options are available to you.
+            `;
+        }
+    </script>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h4>Serenity Mindspace</h4><p style="color:rgba(255,255,255,0.7);font-size:var(--text-sm);">Your safe space for mental wellness.</p></div>
+                <div class="footer-section"><h4>Platform</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="specialists.html">Specialists</a></li><li><a href="store.html">Pricing</a></li><li><a href="ai-chat.html">AI Chat</a></li></ul></div>
+                <div class="footer-section"><h4>Support</h4><ul class="footer-links"><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+                <div class="footer-section crisis-resources"><h4>⚠️ Crisis Resources</h4><p style="color:rgba(255,255,255,0.9);font-size:var(--text-sm);margin-bottom:var(--space-sm);">If you are in crisis:</p><a href="tel:9152987821" class="crisis-number">iCall — 9152987821</a></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span class="footer-year"></span> Serenity Mindspace. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>
